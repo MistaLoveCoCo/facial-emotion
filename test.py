@@ -36,9 +36,9 @@ while True:
 		state = labels[predictions]
 		font = cv2.FONT_HERSHEY_SIMPLEX
 		cv2.putText(img,state,(x+10,y+15), font, 0.5, (255,255,255), 2, cv2.LINE_AA)
-		
-	cv2.imshow('FacialEmotionDetector', img)
-	img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+	imgResize = cv2.resize(img, (1920,1200))
+	cv2.imshow('FacialEmotionDetector', imgResize)
+	img = cv2.cvtColor(imgResize, cv2.COLOR_BGR2RGB)
 	if cv2.waitKey(3) != -1:
 		break
 
